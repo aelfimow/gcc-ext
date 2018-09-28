@@ -1,7 +1,6 @@
 CFLAGS += -O2
 CFLAGS += -Wall
 CFLAGS += -Wextra
-CFLAGS += -pedantic
 CFLAGS += -std=gnu11
 
 all:
