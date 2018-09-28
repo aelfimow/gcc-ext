@@ -1,4 +1,4 @@
-CFLAGS += -O2
+CFLAGS  = -O2
 CFLAGS += -Wall
 CFLAGS += -Wextra
 CFLAGS += -std=gnu11
