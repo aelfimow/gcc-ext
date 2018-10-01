@@ -5,9 +5,9 @@ int main(int argc, char *argv[])
 {
     typeof (argc) i = 1;
 
-    bool flag = false;
+    int flag = 0;
 
-    while (i < 0)
+    while (i < argc)
     {
         flag = flag ? : (argv[i][0] > 'c');
         ++i;
