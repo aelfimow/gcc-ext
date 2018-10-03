@@ -28,15 +28,15 @@ int main(int argc, char *argv[])
     uint8_t buffer[sizeof(__int128)];
     memset(buffer, 0, sizeof(buffer));
 
-    __int128 value = 0x0123456789ABCDEF;
+    __int128 value = 1;
 
-    memcpy(buffer, &value, sizeof(buffer));
-    out(buffer, sizeof(buffer));
+    for (int i = 0; i < (8 * size_of_int128); ++i)
+    {
+        value <<= 1;
 
-    ++value;
-
-    memcpy(buffer, &value, sizeof(buffer));
-    out(buffer, sizeof(buffer));
+        memcpy(buffer, &value, sizeof(buffer));
+        out(buffer, sizeof(buffer));
+    }
 
     return EXIT_SUCCESS;
 }
