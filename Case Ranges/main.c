@@ -1,15 +1,9 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-static void print_complex(_Complex double value)
-{
-    printf("%f + j%f\n", __real__ value, __imag__ value);
-}
-
 int main(int argc, char *argv[])
 {
     int i = 1;
-    int k = 0;
 
     while (i < argc)
     {
@@ -17,22 +11,24 @@ int main(int argc, char *argv[])
 
         while (argv[i][k] != '\0')
         {
-            ++k;
+            const char c = argv[i][k];
 
-            switch (argv[i][k])
+            switch (c)
             {
                 case 'a' ... 'z':
-                    printf("Small: %c\n", argv[i][k]);
+                    printf("Small: %c\n", c);
                     break;
                     
                 case 'A' ... 'Z':
-                    printf("Big: %c\n", argv[i][k]);
+                    printf("Big: %c\n", c);
                     break;
 
                 default:
-                    printf("Unknown: %c\n", argv[i][k]);
+                    printf("Unknown: %c\n", c);
                     break;
             }
+
+            ++k;
         }
 
         ++i;
